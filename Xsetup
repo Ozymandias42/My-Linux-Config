@@ -1,0 +1,10 @@
+#!/bin/sh
+ Xsetup - run as root before the login dialog appears
+
+/usr/bin/xrandr --current | grep -E "^DP-1 connected "
+if [ $? -eq 0 ]; then
+  echo "DP-1 found"
+  sleep 1s 
+  /usr/bin/xrandr --output "$(xrandr -q|grep -Eo 'eDP-[0-9]')" --off
+  /usr/bin/xrandr --output 'DP-1' --auto --primary
+fi

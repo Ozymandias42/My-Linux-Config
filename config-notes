@@ -1,0 +1,20 @@
+/etc/sddm.conf
+    [X11]
+    EnableHiDPI=true
+    DisplayCommand=/usr/share/sddm/scripts/Xsetup #HAS TO BE EXPLICITLY SET!!!
+    #EVEN THOUGH ITS IN sddm --example-config IT IS **NOT** A DEFAULT
+    [Users]
+    ReuseSession=true
+    
+/etc/systemd/logind.conf
+    HandleLidSwitch=ignore
+    HandleLidSwitchDocked=ignore
+
+ports:
+TCP/UDP 515 == LPD (Line Printer Daemon)
+TCP/UDP 631 == IPP (macOS printer sharing)
+UDP 68 == secondary DHCP Port
+UDP 5353 == needs to be set manually again. Bug with firewall.
+ports  995,465,587 alternative yahoo mail ports.
+
+overwrite for btrfs-balance.service in systemd with IOSchedulerClass=3. 3=idle=only use IO if noone else uses it.

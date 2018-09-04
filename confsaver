@@ -1,0 +1,6 @@
+#!/bin/bash
+
+STORE=$HOME/.localSysConfStore
+
+echo $(dirname $1) >> $STORE/.__META__$(basename $1)
+cp $1 $STORE/

@@ -1,0 +1,1 @@
+KERNEL=="card1", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/fabian/.Xauthority", RUN+="/home/fabian/bin/hotplug_monitor.sh"
